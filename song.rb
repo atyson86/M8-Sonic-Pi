@@ -2,6 +2,7 @@ use_bpm 120
 
 chords = (ring 1,4,2,5)
 
+# Piano line alternates between 4 chords starting in A major
 live_loop :piano do
   stop
   use_synth :piano
@@ -12,6 +13,7 @@ live_loop :piano do
   end
 end
 
+# Drum Beat start
 live_loop :cymbal1 do
   stop
   sample :drum_cymbal_closed if spread(7,16).tick
@@ -43,6 +45,7 @@ live_loop :more_drums do
   sample :drum_tom_mid_soft if spread(4,16).tick
 end
 
+# Soothing sounds
 live_loop :sounds do
   stop
   sync :piano
@@ -50,6 +53,7 @@ live_loop :sounds do
   sleep 5
 end
 
+# This plays a melody line
 live_loop :beeps do
   stop
   use_synth :dtri
@@ -57,6 +61,7 @@ live_loop :beeps do
   sleep [0.5,1,2,3,4].choose
 end
 
+# More soothing sounds
 live_loop :hum do
   stop
   sync :bd
@@ -64,6 +69,7 @@ live_loop :hum do
   sleep 5
 end
 
+# A second melody line on a kalimba
 live_loop :melody do
   stop
   with_fx :reverb do
@@ -73,6 +79,7 @@ live_loop :melody do
   end
 end
 
+# Laser noises!
 live_loop :laser do
   ##| stop
   sync :bd
